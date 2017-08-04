@@ -1,0 +1,333 @@
+*{
+	padding:0;
+	margin:0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*Direct style for nav tag*/
+nav {
+	top: 0;
+	left: 0;
+	width: 100%;
+	color: #fff;
+	height: 80px;
+	z-index: 1000;
+	margin-top: 0;
+	position: fixed;
+	padding-top: 0px;
+	background: none;
+	transition: all 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
+}
+.titleabout{
+	text-align: center;
+    color: #656464;
+    font-weight: 700;
+    margin-top: 20rem;
+}
+
+/*Menu bar logo and menu styles general*/
+.logo,
+.menu {
+	position: absolute;
+	z-index: 2000;
+}
+
+.logo {
+	left: 0;
+	top: -4px;
+	width: 70px;
+	height: 74px;
+	padding: 0.4% 2%;
+	text-align: left;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-image: url(../images/huge.png);
+	background-size: 81px 38px;
+}
+
+.menu {
+	top: 0;
+	height: 4px;
+	width: 34px;
+	text-align: left;
+	margin: 5rem 2rem;
+	background: #623AA2;
+	transition: all 0.3s; 
+}
+
+#toggle{
+	width: 100px;
+	height: 100px;
+	padding: 45px 40px;
+	z-index: 1000;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+}
+
+
+.menu:before, 
+.menu:after{
+	content: '';
+	display: block;
+	width: 34px;
+	height: 4px;
+	background: #623AA2;
+	position: absolute;
+	z-index: -1;
+}
+
+.navbar-color{
+background-color: whitesmoke;
+	padding: 15px 10px;
+	z-index: 1000;
+	width: 34px;
+	height: 4px;
+}
+.menu:before{
+	top: -8px;
+}
+.menu:after{
+	top: 8px;
+}
+
+#toggle:hover .menu:before{
+	top: -9px;
+}
+#toggle:hover .menu:after{
+	top: 9px;
+}
+
+/*Al hacer click la hamburguesa deberia volverse X*/
+.open .menu{
+	background: none !important;
+}
+.open .menu:after{
+	top: 0 !important;
+	background: #fff !important;
+	transform: rotate(45deg);
+}
+.open .menu:before{
+	top: 0 !important;
+	background: #fff !important;
+	transform: rotate(-45deg);
+}
+
+
+nav.nav-background{
+	top: 0px;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1500;
+	display: inline-block;
+	background: none;
+	position: absolute;
+	transition: background-color 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
+}
+
+
+nav.open .nav-background {
+	opacity: 1;
+	background-color: rgba(98,58,162,0.8) !important;
+	transition: background-color 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
+}
+
+
+nav.open{
+	height: 100%;
+	transition: none;
+	-o-transition: none;
+	-moz-transition: none;
+	-webkit-transition: none;
+}
+
+nav ul{
+	top: -10%;
+	padding: 70px 0 0 0;
+	opacity: 0;
+	width: 100%;
+	text-align: center;
+	visibility: hidden;
+	/*display: table-cell;*/
+	vertical-align: middle;
+	transform: perspective(600px) rotateX(50deg);
+	transition: all 0.3s cubic-bezier(0.7, 0.90, 0.30, 0.63);
+	height: 100vh;
+}
+nav ul li{
+	visibility: hidden;
+}
+
+
+nav ul li a{
+	color: white;
+	width: 100%;
+	display: inline-block;
+	padding: 40px 0 ;
+	letter-spacing: 1rem;
+	margin-top:5rem;
+
+}
+
+nav ul li a:hover{
+	color: #623AA2;
+	background-color: white;
+	list-decoration:none;
+	text-decoration:none;
+}
+
+
+nav.open ul{
+	top: 0;
+	opacity: 1;
+	margin-top: 0;
+	visibility: visible;
+	transform: perspective(600px) rotateX(0deg);
+}
+
+nav.open ul li{
+	color: rgba(250,250,250,0.6);
+	font-size: 40px;
+	visibility: visible !important;
+}
+
+
+
+/*decia nav.solid#logo .logo, cambiar 'solid' por 'open'*/
+nav.open #logo .logo{
+	background-image: url(../images/huge_white.png);
+	background-size: 150px 150px;
+}
+
+.overflow-hidden{
+	overflow:hidden;
+}
+
+/*HEADER*/
+.profile{
+	background-image: url(../img/fondoheader.jpg);
+	background-size: cover;
+	background-repeat: none;
+	background-position: center center;
+	width: 100%;
+	height: 100vh;
+	.nombre{
+		margin-top: 8rem;
+	}
+	.title{
+		color: white;
+		font-size: 60px;
+		margin-top: 20rem;
+	}
+	.subtitle{
+		color: #623AA2;
+		font-weight: 600;
+	}
+	.bajadaperfil{
+		color:white;
+		font-weight: 300;
+	}
+}
+/*sobre mi*/
+.aboutme{
+	height:100vh;
+	width:100%;
+	.about1{
+		background-color:  #623AA2;
+		height: 100vh;
+	}
+	.abouttext{
+		margin-top: 30rem;
+	}
+	.titleabout{
+	text-align: center;
+    color: #656464;
+    font-weight: 700;
+    margin-top: 20rem
+	}
+	.paboutme{
+	color: #656464;
+    margin: 2rem 5rem;
+    font-weight: 300;
+	}
+}
+
+/*Habilidades*/
+
+.habilidades{
+	height:100vh;
+	width:100%;
+	.habilidad-one{
+		padding:50px;
+	}
+	.titleabout{
+	text-align: center;
+    color: #656464;
+    font-weight: 700;
+    margin-top: 10rem
+	}
+	.interes{
+		margin-top: 5rem;
+	}
+	.interesp{
+		margin-top: 3rem;
+		font-weight: 300;
+		color: #656464;
+	}
+	.habilidad-two{
+		background-image: url(../img/flor.jpg);
+		height: 100vh;
+		background-size: cover;
+		background-repeat: none;
+		background-position: center center;
+	}
+}
+
+.programas{
+	height: 100vh;
+	width:100%;
+	background-color: white;
+	.listaprograms{
+		display: flex;
+		list-style: none;
+		list-decoration:none;
+		justify-content: center;
+		padding: 50px 0 0 300px;
+		cursor: pointer;
+	}
+	.listaprograms li{
+	margin-left:40px;
+	cursor: pointer;
+	}
+	.listaprograms li a {
+		justify-content: justify-content;
+		cursor: pointer;
+	}
+	.colored{
+		font-size: 60px;
+		color:#623aa2;
+		cursor: pointer;
+	}
+	.skills{
+		background-image: url(../img/work1.jpg);
+		height: 100vh;
+		background-size: cover;
+		background-repeat: none;
+		background-position: center center;
+	}
+	.skilltitle{
+		margin-top: 7rem;
+	}
+}
+
+.work{
+	background-color:whitesmoke;
+	height: 100vh;
+	width:100%;
+}
