@@ -4,13 +4,15 @@ document.getElementById("toggle").addEventListener("click", function(event){
 	document.getElementById("body").classList.toggle("overflow-hidden");
 });
 
-window.addEventListener('scroll', function () {
-  const distanciaVertical = window.pageYOffset || document.documentElement.scrollTop,
-  toggle = getElementById('toggle');
-  
-  if (distanciaVertical > 30) {
-    toggle.classList.add("navbar-color");
-  } else {
-    toggle.classList.remove("navbar-color");
-  }
-});
+// portfolio
+ $('.gallery ul li a').click(function() {
+     var itemID = $(this).attr('href');
+     $('.gallery ul').addClass('item_open');
+     $(itemID).addClass('item_open');
+     return false;
+ });
+ $('.close').click(function() {
+     $('.port, .gallery ul').removeClass('item_open');
+     return false;
+ });
+
